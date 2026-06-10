@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog Tech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Cabeçalho do Blog */
+        .header {
+            background-color: #1b4370;
+            color: #ffffff;
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Container dos Posts */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        /* Estrutura de cada Post */
+        .post {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* IMAGEM DO CADERNO MAIOR (100px) */
+        .post-icon {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+
+        .post-icon img {
+            width: 100%;
+            height: auto;
+        }
+
+        .post-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .post-title {
+            color: #1b4370;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .post-title:hover {
+            text-decoration: underline;
+        }
+
+        .post-author {
+            color: #1b4370;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .post-text {
+            color: #444444;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        /* Botões de Reação (Likes) */
+        .reactions {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .btn-reaction {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #e0e0e0;
+            border: 1px solid #b0b0b0;
+            padding: 4px 12px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 2px;
+            user-select: none; /* Evita selecionar o texto ao clicar rápido */
+        }
+
+        .btn-reaction:hover {
+            background-color: #d5d5d5;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+    </header>
+
+    <main class="container">
+
+        <article class="post">
+            <div class="post-icon">
+                <img src="imagem-blog (1).png" alt="Ícone do Post">
+            </div>
+            <div class="post-content">
+                <a href="#" class="post-title">Meu primeiro post</a>
+                <p class="post-author">Por: Ruan Teixeira</p>
+                <p class="post-text">
+                    Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.
+                </p>
+                <div class="reactions">
+                    <button class="btn-reaction" onclick="computarClique(this)">❤️ <span>0</span></button>
+                    <button class="btn-reaction" onclick="computarClique(this)">👍 <span>0</span></button>
+                </div>
+            </div>
+        </article>
+
+        <article class="post">
+            <div class="post-icon">
+                <img src="imagem-blog (1).png" alt="Ícone do Post">
+            </div>
+            <div class="post-content">
+                <a href="#" class="post-title">Meu segundo post</a>
+                <p class="post-author">Por: Ruan Teixeira</p>
+                <p class="post-text">
+                    Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.
+                </p>
+                <div class="reactions">
+                    <button class="btn-reaction" onclick="computarClique(this)">❤️ <span>0</span></button>
+                    <button class="btn-reaction" onclick="computarClique(this)">👍 <span>0</span></button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <script>
+        function computarClique(botao) {
+            // Encontra a tag <span> dentro do botão clicado
+            const spanContador = botao.querySelector('span');
+            
+            // Pega o número atual, transforma em número inteiro e soma + 1
+            let numeroAtual = parseInt(spanContador.textContent);
+            spanContador.textContent = numeroAtual + 1;
+        }
+    </script>
+
+</body>
+</html>
